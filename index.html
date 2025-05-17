@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+  </style>
+</head>
+
+<body data-tab="0">
+  <div id="bkg"></div>
+  <header id="header">
+    <div class="mws">
+      <div class="container">
+        <svg id="app_logo" width="179" height="41">
+          <use xlink:href="./assets/images/icons.svg#logo"></use>
+        </svg>
+        <div id="toogle_theme">
+          <div class="icons">
+            <div class="icon">
+              <svg width="22" height="22">
+                <use xlink:href="./assets/images/icons.svg#moon"></use>
+              </svg>
+            </div>
+            <div class="icon">
+              <svg width="22" height="22">
+                <use xlink:href="./assets/images/icons.svg#sun"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="mws">
+      <h1>Extensions List</h1>
+      <div id="tabs">
+        <div class="btn active">All</div>
+        <div class="btn">Active</div>
+        <div class="btn">Inactive</div>
+      </div>
+    </div>
+  </nav>
+  <section id="root" class="mws">
+    <main>
+
+    </main>
+  </section>
+  <script src="./assets//scripts/script.js"></script>
+  <footer class="attribution">
+    Challenge by <a
+      href="https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp?tab=downloads">Frontend
+      julioedi</a>.
+    Coded by <a href="https://github.com/julioedi">JulioEdi</a>.
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+:root {
+    --body: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --bodyCard: #FCFDFF;
+    --border: #DCE0EB;
+    --text: #09153E;
+    --primary: #DE473F;
+    --transition: 0.3s ease all;
+    --shadowColor: rgba(0,0,0,0.12);
+}
+
+html.dark {
+    --body: linear-gradient(180deg, #040918 0%, #091540 100%);
+    --bodyCard: #1F2535;
+    --border: #535A6D;
+    --text: #DFE2E9;
+    --shadowColor: rgba(0,0,0,0.5);
+}
+
+html {
+    min-height: 100dvh;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 500;
+    padding-top: 140px;
+    padding-bottom: 48px;
+}
+#bkg{
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: var(--body);
+    background-repeat: no-repeat;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.mws {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(1);
+    }
+
+    75% {
+        transition: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+/*---------------------------------------------------------------------------------
+Topbar
+---------------------------------------------------------------------------------*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 0;
+    z-index: 999999;
+}
+
+#header .container {
+    background-color: var(--bodyCard);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    box-shadow: 0 8px 16px -8px var(--shadowColor);
+}
+
+html.dark #header .container{
+    border-color: var(--bodyCard);
+}
+
+/*Toogle button*/
+#toogle_theme {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+#toogle_theme:hover {
+    transform: scale(1.15);
+}
+
+#toogle_theme:before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: currentColor;
+    opacity: 0.06;
+}
+
+#toogle_theme .icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+#toogle_theme .icons .icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.attribution {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/*---------------------------------------------------------------------------------
+Topbar
+---------------------------------------------------------------------------------*/
+/*tabs*/
+nav>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#tabs {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: var(--bodyCard);
+    border: 1px solid var(--border);
+    border-radius: 48px;
+    transition: var(--transition);
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+.btn.active {
+    background-color: var(--primary);
+    cursor: default;
+    pointer-events: none;
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.attribution a {
+    color: var(--primary);
+}
+
+/*---------------------------------------------------------------------------------
+lists
+---------------------------------------------------------------------------------*/
+/*tabs*/
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    transition: var(--transition);
+    padding-bottom: 24px;
+}
+
+.addon_card_container {
+    width: calc(100% / 3 - 16px);
+    transition: var(--transition);
+}
+
+.addon_card {
+    background: var(--bodyCard);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 24px;
+    height: 100%;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+.addon_card {
+    display: grid;
+    align-content: space-between;
+    gap: 24px;
+    transition: var(--transition);
+    box-shadow: 0 8px 16px -8px var(--shadowColor);
+}
+
+.addon_card .info {
+    display: flex;
+    gap: 16px;
+}
+
+.addon_card .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes remove-card {
+    0% {
+
+        transform: scale(1);
+    }
+
+    25% {
+
+        transform: scale(1.25);
+    }
+
+    100% {
+
+        transform: scale(0);
+    }
+}
+
+.switch {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.switch::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0.25;
+    display: flex;
+    background: currentColor;
+}
+
+.switch::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 18px;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background: #fff;
+    transition: var(--transition);
+}
+
+.addon_card.active .switch::after {
+    right: 2px;
+}
+
+.addon_card.active .switch {
+    color: var(--primary)
+}
+
+.addon_card.active .switch::before {
+    opacity: 1;
+}
+
+.addon_card.remove {
+    animation: remove-card 0.5s ease forwards;
+}
+
+body[data-tab="1"] .addon_card_container:not(.active),
+body[data-tab="2"] .addon_card_container:is(.active) {
+    display: none;
+}
+
+.addon_card.none {
+    transform: scale(0);
+}
+
+@media (max-width:960px) {
+
+    .addon_card_container {
+        width: calc(50% - 12px);
+    }
+}
+
+@media (max-width:540px) {
+    nav>div{
+        flex-direction: column;
+        gap:24px;
+        padding-top: 0;
+        padding-bottom: 48px;
+    }
+    .addon_card_container {
+        width: 100%;
+    }
+    main{
+        gap:16px;
+    }
+}
